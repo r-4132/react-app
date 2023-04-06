@@ -12,21 +12,20 @@ function Popular()
   },[]);
   const getPopularRecipes  = async () =>
   {
-    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20`) // ctrl + c when implementing .env
+    const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=5`) // ctrl + c when implementing .env
     const data = await api.json(); 
     console.log(data);
     setPopularRecipes(data.recipes)
   };
   return (
-    <div>
+    <div className='popular_recipes_container'>
       {
         popularRecipes.map(recipes =>
           {
             return(
-              <div>
-                <p>
-                  {recipes.title}
-                </p>
+              <div className='popular_recipes'key ={recipes.id}>
+                <p className='recipes_title'>{recipes.title}</p>
+                <img src={recipes.image} alt={recipes.title}/>
               </div>
 
             );
