@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Popular() 
 {
@@ -34,8 +36,10 @@ function Popular()
         popularRecipes.map(recipes =>
           {
             return(
-              <div className='popular_recipes'key ={recipes.id}>
-                <img src={recipes.image} alt={recipes.title}/>
+              <div className='popular_recipes' key={recipes.id}>
+                <Link to={`/popular-recipes/${recipes.id}`}>
+                <img src={recipes.image} alt={recipes.title} />
+                </Link>
                 <p className='recipes_title'>{recipes.title}</p>
               </div>
 
