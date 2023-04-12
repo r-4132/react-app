@@ -15,7 +15,7 @@ function Pages() {
     <Routes>
         <Route path="/" element={<Popular />} />
         <Route path="/search-results/:search" element={<SearchResults />} />
-        <Route path="/recipe/:id" element={<Recipe />} />
+        <Route path="/recipe/:name" element={<Recipe />} />
     </Routes>
     <SearchRecipes/>
 
