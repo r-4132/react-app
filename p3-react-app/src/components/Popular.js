@@ -37,7 +37,7 @@ function Popular()
           {
             return(
               <div className='popular_recipes' key={recipes.id}>
-                <Link to={`/popular-recipes/${recipes.id}`}>
+                <Link to={`/recipe/${recipes.id}`}>
                 <img src={recipes.image} alt={recipes.title} />
                 <p className='recipes_title'>{recipes.title}</p>
                 </Link>

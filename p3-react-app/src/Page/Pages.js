@@ -1,7 +1,10 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import PopularRecipes from './PopularRecipes'
+// import PopularRecipes from './PopularRecipes'
 import Popular from '../components/Popular';
+import Recipe from './Recipe';
+import SearchRecipes from './SearchRecipes';
+
 // import Home from './Home';
 
 function Pages() {
@@ -9,8 +12,10 @@ function Pages() {
     <>
     <Routes>
         <Route path="/" element={<Popular />} />
-        <Route path="/popular-recipes/:id" element={<PopularRecipes />} />
+        <Route path="/recipe/:id" element={<Recipe />} />
+        {/* <Route path="/search-recipes/:search" element={<SearchRecipes />} /> */}
     </Routes>
+    <SearchRecipes/>
 
     </>
   )
