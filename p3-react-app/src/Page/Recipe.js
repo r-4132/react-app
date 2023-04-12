@@ -24,6 +24,23 @@ function Recipe()
     fetchRecipes();
   }, [params.name]);
 
+
+  const handleBookmark = () => 
+  {
+    const bookmarkedRecipes = JSON.parse(localStorage.getItem("bookmarkedRecipes")) || [];
+    const isAlreadyBookmarked = bookmarkedRecipes.find(recipe => recipe.id === ingredients.id);
+    
+    if (isAlreadyBookmarked) 
+    {
+      const filteredRecipes = bookmarkedRecipes.filter(recipe => recipe.id !== ingredients.id);
+      localStorage.setItem("bookmarkedRecipes", JSON.stringify(filteredRecipes));
+    } 
+    else 
+    {
+      bookmarkedRecipes.push(ingredients);
+      localStorage.setItem("bookmarkedRecipes", JSON.stringify(bookmarkedRecipes));
+    }
+  }
   
   
   return (
@@ -44,6 +61,8 @@ function Recipe()
           ))
         }
       </ul>
+      <button onClick={handleBookmark}>Bookmark</button>
+
     </div>
   )
 }
