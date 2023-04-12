@@ -5,6 +5,7 @@ import Popular from '../components/Popular';
 import Recipe from './Recipe';
 import SearchRecipes from './SearchRecipes';
 import SearchResults from './SearchResults'
+import './Pages.css'
 
 // import Home from './Home';
 
@@ -13,8 +14,8 @@ function Pages() {
     <>
     <Routes>
         <Route path="/" element={<Popular />} />
-        <Route path="/recipe/:id" element={<Recipe />} />
         <Route path="/search-results/:search" element={<SearchResults />} />
+        <Route path="/recipe/:id" element={<Recipe />} />
     </Routes>
     <SearchRecipes/>
 

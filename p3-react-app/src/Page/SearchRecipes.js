@@ -25,7 +25,7 @@ const SearchRecipes = () =>
 
   return (
     <div>
-        <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch}>
         <input type="text" value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
         <button type="submit">Search</button>
       </form>
