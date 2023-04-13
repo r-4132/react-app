@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import StarRating from '../components/StarRating';
+import Comment from '../components/Comment'
 
 function Recipe() 
 {
@@ -64,6 +65,7 @@ function Recipe()
       </ul>
       <button onClick={handleBookmark}>Bookmark</button>
       <StarRating/>
+      {/* <Comment/> */}
 
 
     </div>

@@ -9,9 +9,11 @@ const SearchRecipes = () =>
 
   const navigate = useNavigate();
 
-  const handleSearch = async (event) => {
+  const handleSearch = async (event) => 
+  {
     event.preventDefault();
-    const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', {
+    const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', 
+    {
         params: {
             apiKey: process.env.REACT_APP_API_KEY,
             ingredients: searchInput,
