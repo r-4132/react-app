@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import StarRating from '../components/StarRating';
 
 function Recipe() 
 {
@@ -62,6 +63,8 @@ function Recipe()
         }
       </ul>
       <button onClick={handleBookmark}>Bookmark</button>
+      <StarRating/>
+
 
     </div>
   )

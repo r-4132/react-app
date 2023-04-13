@@ -13,3 +13,14 @@ code {
     monospace;
 }
 
+#star_rad
+{
+  display: none;
+
+}
+
+#star
+{
+  cursor: pointer;
+  transition: color 200ms;
+}
