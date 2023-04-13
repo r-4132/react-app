@@ -65,7 +65,7 @@ function Recipe()
       </ul>
       <button onClick={handleBookmark}>Bookmark</button>
       <StarRating/>
-      {/* <Comment/> */}
+      <Comment/>
 
 
     </div>
