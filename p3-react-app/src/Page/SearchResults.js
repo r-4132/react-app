@@ -13,15 +13,15 @@ const SearchResults = () =>
   const { results } = location.state;
 
   return (
-    <div className="search_results_container">
+    <div id='recipes_container'>
       {
         results.map((recipe) =>
         {
             return(
-            <div className="search_results" key={recipe.id}>
+            <div id='recipes_card' key={recipe.id}>
                 <Link to={`/recipe/${recipe.id}`}>
-                <img src={recipe.image} alt={recipe.title} />
-                <p className='recipes_title'>{recipe.title}</p>
+                  <img src={recipe.image} alt={recipe.title} />
+                  <p id='recipes_title'>{recipe.title}</p>
                 </Link>
             </div>
             )

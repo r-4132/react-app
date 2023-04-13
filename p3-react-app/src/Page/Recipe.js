@@ -45,7 +45,7 @@ function Recipe()
   
   return (
     <div className='recipe_container'>
-      <div className='reciepe_card'>
+      <div className='recipe_card'>
         <img src={ingredients.image} alt={ingredients.title} />
         <p dangerouslySetInnerHTML={{__html: ingredients.summary}}></p>
         <br></br>

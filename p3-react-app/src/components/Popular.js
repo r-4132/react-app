@@ -31,15 +31,15 @@ function Popular()
     }
   };
   return (
-    <div className='popular_recipes_container'>
+    <div id='recipes_container'>
       {
         popularRecipes.map(recipes =>
           {
             return(
-              <div className='popular_recipes' key={recipes.id}>
+              <div id='recipes_card' key={recipes.id}>
                 <Link to={`/recipe/${recipes.id}`}>
                 <img src={recipes.image} alt={recipes.title} />
-                <p className='recipes_title'>{recipes.title}</p>
+                <p id='recipes_title'>{recipes.title}</p>
                 </Link>
               </div>
 
