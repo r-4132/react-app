@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Popular() 
 {
-  const [popularRecipes, setPopularRecipes] = useState([]);
+  const [popularRecipes, setPopularRecipes] = useState([]); // initialized to an empty array []
   
 
   useEffect(() =>
@@ -22,9 +22,8 @@ function Popular()
     }
     else
     {
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=4`) // ctrl + c when implementing .env, env. if a way to hide api key.
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=4`) // ctrl + c (This is 1 week older Renee, I forgot what this comment means) when implementing .env, env. it's a way to hide api key.
       const data = await api.json(); 
-      console.log(data);
       setPopularRecipes(data.recipes)
       
       localStorage.setItem('popular', JSON.stringify(data.recipes));

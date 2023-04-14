@@ -1,15 +1,15 @@
 import React, { useReducer } from 'react';
 import { FaStar } from 'react-icons/fa';
 
-const initialState = { rating: null };
+const initialState = { rating: null }; //initialization. Set the value of rating to null
 
 function reducer(state, action) 
 {
   switch (action.type) 
   {
     case 'SET_RATING':
-      return { 
-        rating: action.payload 
+      return { //this is basically where the new rating value is being updated
+        rating: action.payload //payload is used to pass the new rating value
     };
     default:
       return state;
@@ -22,9 +22,9 @@ function StarRating()
 
   return (
     <div>
-      {[...Array(5)].map((star, i) => 
+      {[...Array(5)].map((star, i) => // this will basically print out 5 stars
       {
-        const ratingValue = i + 1;
+        const ratingValue = i + 1; // this will represent the value of the star. 2 = two stars
 
         return (
           <label key={i}>

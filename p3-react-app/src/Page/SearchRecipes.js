@@ -12,17 +12,27 @@ const SearchRecipes = () =>
   const handleSearch = async (event) => 
   {
     event.preventDefault();
-    const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', 
+
+    try{
+
+      const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', 
+      {
+          params: {
+              apiKey: process.env.REACT_APP_API_KEY,
+              ingredients: searchInput, // this will change based on the user input 
+              number: 2, // limit number of results to 10
+              ranking: 1 // prioritize results with most missing ingredients
+            }
+          });
+          
+          navigate(`/search-results/${searchInput}`, { state: { results: response.data } }); //the first arguement will replace the url base on what the user input
+    } 
+
+    catch (error)
     {
-        params: {
-            apiKey: process.env.REACT_APP_API_KEY,
-            ingredients: searchInput,
-            number: 2, // limit number of results to 10
-            ranking: 1 // prioritize results with most missing ingredients
-        }
-    });
-    // setSearchResults(response.data);
-    navigate(`/search-results/${searchInput}`, { state: { results: response.data } });
+      console.log(error)
+
+    }
 };
 
   return (

@@ -21,7 +21,7 @@ function Recipe()
 
   };
 
-  useEffect(() =>
+  useEffect(() => // fetc recipe data whenever params.name changes
   {
     fetchRecipes();
   }, [params.name]);
@@ -33,13 +33,13 @@ function Recipe()
      
     if (bookmarkedRecipes.find(recipe => recipe.id === ingredients.id)) 
     {
-      const filteredRecipes = bookmarkedRecipes.filter(recipe => recipe.id !== ingredients.id); // filter out the 
-      localStorage.setItem("bookmarkedRecipes", JSON.stringify(filteredRecipes));
+      const filteredRecipes = bookmarkedRecipes.filter(recipe => recipe.id !== ingredients.id); // filter out the and find the recipe that matches the current ingredients.id
+      localStorage.setItem("bookmarkedRecipes", JSON.stringify(filteredRecipes)); // save it to filteredRecipes that is being converted to JSON STRING BY JSON.stringify in order to be stored as a text
     } 
     else 
     {
-      bookmarkedRecipes.push(ingredients);
-      localStorage.setItem("bookmarkedRecipes", JSON.stringify(bookmarkedRecipes));
+      bookmarkedRecipes.push(ingredients); // pushed to the bookmarkedRecipes array 
+      localStorage.setItem("bookmarkedRecipes", JSON.stringify(bookmarkedRecipes)); //updated array is stored in the local storage, essential removing it from the local storage
     }
   }
   
@@ -48,7 +48,8 @@ function Recipe()
     <div className='recipe_container'>
       <div className='recipe_card'>
         <img src={ingredients.image} alt={ingredients.title} />
-        <p dangerouslySetInnerHTML={{__html: ingredients.summary}}></p>
+        <p dangerouslySetInnerHTML={{__html: ingredients.summary}}></p> 
+        {/* dangerouslySetInnerHTML the render out the html code from the api */}
         <br></br>
         <p dangerouslySetInnerHTML={{__html: ingredients.instructions}}></p>
       </div>
