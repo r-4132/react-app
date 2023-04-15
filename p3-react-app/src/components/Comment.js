@@ -56,12 +56,12 @@ function Comment()
     });
   };
 
-  const handleCommentSubmit = (event) => 
+  const handleCommentSubmit = (event) =>  // updates the state by adding the new comment to the list of comments and also clears the comment input field by setting its value to an empty string.
   {
     event.preventDefault();
     dispatch({
       type: "ADD_COMMENT",
-      payload: state.commentInput,
+      payload: state.commentInput, //reducer function takes this payload and adds it to the comments array 
     });
   };
 
