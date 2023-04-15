@@ -7,7 +7,7 @@ const SearchRecipes = () =>
   const [searchInput, setSearchInput] = useState('');
   // const [searchResults, setSearchResults] = useState([]);
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // from react-router-dom library
 
   const handleSearch = async (event) => 
   {
@@ -25,7 +25,7 @@ const SearchRecipes = () =>
             }
           });
           
-          navigate(`/search-results/${searchInput}`, { state: { results: response.data } }); //the first arguement will replace the url base on what the user input
+          navigate(`/search-results/${searchInput}`, { state: { results: response.data } }); //the first arguement will replace the url base on what the user input, the 2nd argument, state has the value of results w/c another object with a property w/c also has a value of response.data
     } 
 
     catch (error)
