@@ -6,6 +6,7 @@ import SearchRecipes from './SearchRecipes';
 import SearchResults from './SearchResults'
 import './Pages.css'
 import Bookmarks from './Bookmarks';
+import AboutUs from './AboutUs';
 
 // import Home from './Home';
 
@@ -15,12 +16,17 @@ function Pages() {
     <nav>
         <ul>
           <li>
+            <Link to="/" >Home</Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
             <Link to="/bookmarks">Bookmarks</Link>
           </li>
         </ul>
         <ul>
           <li>
-            <Link to="/" >Home</Link>
+            <Link to="about-us" >AboutUs</Link>
           </li>
         </ul>
       </nav>
@@ -30,6 +36,7 @@ function Pages() {
         <Route path="/search-results/:search" element={<SearchResults />} />
         <Route path="/recipe/:name" element={<Recipe />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
+        <Route path="/about-us" element={<AboutUs />} />
     </Routes>
     <SearchRecipes/>
 

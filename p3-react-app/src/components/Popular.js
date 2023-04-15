@@ -22,7 +22,7 @@ function Popular()
     }
     else
     {
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=4`) // ctrl + c (This is 1 week older Renee, I forgot what this comment means) when implementing .env, env. it's a way to hide api key.
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=8`) // ctrl + c (This is 1 week older Renee, I forgot what this comment means) when implementing .env, env. it's a way to hide api key.
       const data = await api.json(); 
       setPopularRecipes(data.recipes)
       

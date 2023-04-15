@@ -14,13 +14,14 @@ const SearchRecipes = () =>
     event.preventDefault();
 
     try{
+      const ingredientsArray = searchInput.split(' '); // will split up ingredients typed by the user into spaces
 
       const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', 
       {
           params: {
               apiKey: process.env.REACT_APP_API_KEY,
-              ingredients: searchInput, // this will change based on the user input 
-              number: 2, // limit number of results to 10
+              ingredients: ingredientsArray.join(','), // this will join the by comma which is required by the url
+              number: 8, // limit number of results to 10
               ranking: 1 // prioritize results with most missing ingredients
             }
           });
