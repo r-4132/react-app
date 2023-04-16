@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* overflow: hidden; */
 }
 
 #recipes_container
@@ -15,8 +16,17 @@
   margin-top: 20px;
   border-radius: 20px;
   width: 80%;
-   
+  /* background-color: #5e8698; */
+}
 
+@font-face {
+  font-family:'JosefinSans-SemiBold';
+  src: url('/public/JosefinSans-SemiBold.ttf') format('truetype');
+}
+body
+{
+  background-color: #f0ecc9;
+  
 }
 
 #recipes_card
@@ -29,7 +39,7 @@
   position: relative;
 }
 
-img
+#img_recipe
 {
   width: 250px;
   border-radius: 10px;
@@ -43,5 +53,12 @@ img
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+ 
+  
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7));
+  border-radius: 10px;
+
+  
 }
+

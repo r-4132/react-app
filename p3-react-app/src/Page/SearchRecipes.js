@@ -1,6 +1,46 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const SearchBox = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  input[type="text"] 
+  {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+
+  button[type="submit"] 
+  {
+    background-color: #458788;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover 
+  {
+    background-color: #ff6b6b;
+  }
+
+  
+`;
+
+
 
 const SearchRecipes = () => 
 {
@@ -36,14 +76,18 @@ const SearchRecipes = () =>
     }
 };
 
-  return (
-    <div>
-      <form onSubmit={handleSearch}>
-        <input type="text" value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  );
+return (
+  <>
+    <SearchBox onSubmit={handleSearch}>
+      <input
+        type="text"
+        value={searchInput}
+        onChange={(event) => setSearchInput(event.target.value)}
+      />
+      <button type="submit">Search</button>
+    </SearchBox>
+  </>
+);
 };
 
 export default SearchRecipes;

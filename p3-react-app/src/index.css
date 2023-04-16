@@ -8,10 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 #star_rad
 {
@@ -24,3 +24,4 @@ code {
   cursor: pointer;
   transition: color 200ms;
 }
+

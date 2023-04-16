@@ -37,7 +37,7 @@ function Popular()
             return(
               <div id='recipes_card' key={recipes.id}>
                 <Link to={`/recipe/${recipes.id}`}>
-                <img src={recipes.image} alt={recipes.title} />
+                <img id='img_recipe' src={recipes.image} alt={recipes.title} />
                 <p id='recipes_title'>{recipes.title}</p>
                 </Link>
               </div>

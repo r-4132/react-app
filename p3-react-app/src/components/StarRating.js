@@ -38,8 +38,8 @@ function StarRating()
             />
             <FaStar
               id="star"
-              color={ratingValue <= state.rating ? '#ffc107' : '#e4e5e9'}
-              size={15}
+              color={ratingValue <= state.rating ? '#ffc107' : '#555555'}
+              size={30}
             />
           </label>
         );
