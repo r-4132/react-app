@@ -1,8 +1,83 @@
-import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import StarRating from '../components/StarRating';
 import Comment from '../components/Comment'
+import styled from 'styled-components';
+import './Pages.css'
+
+
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'JosefinSans-SemiBold', Courier, monospace;
+  color: #333333;
+
+
+  button[type="submit"] 
+  {
+    background-color: #458788;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover 
+  {
+    background-color: #ff6b6b;
+  }
+  
+`;
+const Image = styled.div`
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  img 
+  {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+`;
+
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333333;
+  width:80%;
+`;
+const IngredientsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 20px;
+
+  
+`;
+
+const BookmarkButton = styled.button`
+  font-size: 16px;
+  background-color: #c1a35f;
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 20px;
+  cursor: pointer;
+
+  &:hover 
+  {
+    background-color: #333333;
+    color: #c1a35f;
+  }
+`;
 
 function Recipe() 
 {
@@ -45,30 +120,30 @@ function Recipe()
   
   
   return (
-    <div className='recipe_container'>
-      <div className='recipe_card'>
-        <img src={ingredients.image} alt={ingredients.title} />
-        <p dangerouslySetInnerHTML={{__html: ingredients.summary}}></p> 
+    <Container>
+      <Card>
+        <h1 className='ingredients_title'>{ingredients.title}</h1>
+        <Image><img src={ingredients.image} alt={ingredients.title} /></Image>
+        <h3>Directions</h3>
         {/* dangerouslySetInnerHTML the render out the html code from the api */}
         <br></br>
         <p dangerouslySetInnerHTML={{__html: ingredients.instructions}}></p>
-      </div>
       <br></br>
-        <h3 className='ingredients_title'>{ingredients.title}</h3>
 
-      <ul>
+      <IngredientsContainer>
         {
           ingredients.extendedIngredients && ingredients.extendedIngredients.map((items) => ( //define ingredients.extendedIngredients to prevent error
-            <li key ={items.id}>{items.original}</li>
+          <li key ={items.id}>{items.original}</li>
           ))
         }
-      </ul>
-      <button onClick={handleBookmark}>Bookmark</button>
+      </IngredientsContainer>
+      <BookmarkButton onClick={handleBookmark}>Bookmark</BookmarkButton>
       <StarRating/>
       <Comment/>
+        </Card>
 
 
-    </div>
+    </Container>
   )
 }
 
