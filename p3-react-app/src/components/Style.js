@@ -125,6 +125,10 @@ export const SearchBox = styled.form`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
     width: 50%
+    outline: none;
+  }
+  label {
+    margin-left: 10px;
   }
 
   button[type="submit"] 

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import StarRating from '../components/StarRating';
 import Comment from '../components/Comment'
 import './Pages.css'
-import { Container, BookmarkButton, Card, IngredientsContainer, Image} from '../components/Style'
+import { Container, BookmarkButton, Card, IngredientsContainer, Image} from '../components/Style' 
 
 
 
@@ -21,6 +21,7 @@ function Recipe()
     const ingredientsData = await data.json();
     setIngredients(ingredientsData);
     console.log(ingredientsData);
+    
 
   };
 
