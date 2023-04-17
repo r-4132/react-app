@@ -1,8 +1,27 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { SearchBox,Card, Container } from "../components/Style";
+import { SearchBox,Card } from "../components/Style";
+import styled from "styled-components";
 
+const ContainerTypes = styled.div`
+display: flex;  
+flex-direction:row;
+width: 80%;
+font-family: 'JosefinSans-SemiBold', Courier, monospace;
+justify-content: center;
+
+
+
+`
+
+const DishTypes = styled.div`
+margin: 10px;
+`
+const DietTypes = styled.div`
+margin: 10px;
+
+`
 
 
 
@@ -110,14 +129,18 @@ const handleDietTypes = (event) =>
 
 return (
   <>
-  <Container>
-    <Card>
+  
       <SearchBox onSubmit={handleSearch}>
         <label>
           Search ingredients:
           <input type="text" value={searchInput} onChange={(event) => setSearchInput(event.target.value)} />
+          <button type="submit">Search</button>
         </label>
-        <div>
+
+          </SearchBox>
+        <ContainerTypes>
+          <Card>
+            <DishTypes>
           <p>Filter by dish type:</p>
           {dishTypesList.map((type, index) => ( // looping over dishtypes
             <label key={index}>
@@ -125,8 +148,9 @@ return (
               {type}
             </label>
           ))}
-        </div>
-        <div>
+            </DishTypes>
+
+            <DietTypes>
           <p>Filter by diet type:</p>
           {dietTypesList.map((type, index) => ( // looping over dishtypes
             <label key={index}>
@@ -134,14 +158,12 @@ return (
               {type}
             </label>
           ))}
-        </div>
-        <button type="submit">Search</button>
-      </SearchBox>
-    </Card>
-  </Container>
+            </DietTypes>
+          </Card>
+        </ContainerTypes>
+
     </>
 );
 };
 
 export default SearchRecipes;
-

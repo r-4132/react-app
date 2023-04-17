@@ -7,18 +7,22 @@ import SearchResults from './SearchResults'
 import './Pages.css'
 import Bookmarks from './Bookmarks';
 import AboutUs from './AboutUs';
-import { Nav, CustomText } from '../components/Style';
+import { Nav} from '../components/Style';
+import styled from 'styled-components';
+import logoImage from '../components/myLogo.png'
 
-
-
+const LogoImage = styled.img`
+  width: 2rem;
+  transform: scale(3);
+  margin: 20px 20px 0px;
+  // padding: 10px;
+`;
 
 function Pages() {
   return (
     <>
     <Nav>
-      <CustomText>
-        SIPSIP
-      </CustomText>
+    <LogoImage src={logoImage} alt="Logo" />
         <ul>
           <li>
             <Link to="/" >Home</Link>
