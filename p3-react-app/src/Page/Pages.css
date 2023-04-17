@@ -18,7 +18,11 @@
   width: 80%;
   /* background-color: #5e8698; */
 }
-
+h2
+{
+  text-align: center;
+  
+}
 @font-face {
   font-family:'JosefinSans-SemiBold';
   src: url('/public/JosefinSans-SemiBold.ttf') format('truetype');

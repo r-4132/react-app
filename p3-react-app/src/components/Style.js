@@ -52,7 +52,7 @@ export const IngredientsContainer = styled.div`
   flex-direction: column;
   align-items: left;
   margin: 20px;
-  padding: 20px;
+  paddiing: 20px;
 
   
 `;
@@ -114,7 +114,8 @@ export const SearchBox = styled.form`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   input[type="text"] 
   {
@@ -123,10 +124,12 @@ export const SearchBox = styled.form`
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    width: 50%;
+    width: 50%
     outline: none;
   }
-
+  label {
+    margin-left: 10px;
+  }
 
   button[type="submit"] 
   {

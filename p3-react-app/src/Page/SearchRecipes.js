@@ -30,6 +30,7 @@ const SearchRecipes = () =>
   const [searchInput, setSearchInput] = useState('');
   const [dishTypes, setDishTypes] = useState([]);
   const [dietTypes, setDietTypes] = useState([]);
+  
 
   const navigate = useNavigate(); // from react-router-dom library
 
@@ -72,8 +73,6 @@ const dishTypesList =  //array of dishes
   'Breakfast',
   'Soup',
   'Beverage',
-  'Sauce',
-  'Marinade',
   'Fingerfood',
   'Snack',
   'Drink'

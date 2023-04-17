@@ -5,13 +5,10 @@ const SearchResults = () =>
 {
   const location = useLocation(); //useLocation is use to get the object that contains information about the current URL path and query string.
 
-  if (!location.state || !location.state.results) 
-  {
-    return <h1>No results found</h1>; 
-  }
-
   const { results } = location.state; // this is to destructurize (I'm not sure if that's a word) and store {results} and make assign new variable to results
-
+  if (!results || results.length === 0) {
+    return <h1>No recipes found</h1>;
+  }
   return (
     <div id='recipes_container'>
       {

@@ -30,6 +30,9 @@ function Popular()
     }
   };
   return (
+    <>
+    
+      <h2>Popular Recipes</h2>
     <div id='recipes_container'>
       {
         popularRecipes.map(recipes =>
@@ -46,6 +49,7 @@ function Popular()
           })
       }
     </div>
+    </>
   )
 }
 
