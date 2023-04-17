@@ -21,9 +21,7 @@ function AboutUs() {
             This website will search for recipes based on the ingredients you have on hand. 
             No need to scower and check every recipes on the internet. We have it all here.
             <br /><br />
-            Who is Sipsip?
-            <br />
-            Ikaw.
+
           </h3>
           </About>
         </Card>

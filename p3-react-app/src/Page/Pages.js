@@ -35,7 +35,7 @@ function Pages() {
         </ul>
         <ul>
           <li>
-            <Link to="about-us" >AboutUs</Link>
+            <Link to="about-us" >About</Link>
           </li>
         </ul>
       </Nav>
