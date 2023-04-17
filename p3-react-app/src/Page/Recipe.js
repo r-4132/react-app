@@ -2,82 +2,10 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import StarRating from '../components/StarRating';
 import Comment from '../components/Comment'
-import styled from 'styled-components';
 import './Pages.css'
+import { Container, BookmarkButton, Card, IngredientsContainer, Image} from '../components/Style'
 
 
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'JosefinSans-SemiBold', Courier, monospace;
-  color: #333333;
-
-
-  button[type="submit"] 
-  {
-    background-color: #458788;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 12px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-
-  button[type="submit"]:hover 
-  {
-    background-color: #ff6b6b;
-  }
-  
-`;
-const Image = styled.div`
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
-
-  img 
-  {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-`;
-
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #333333;
-  width:80%;
-`;
-const IngredientsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  margin-left: 20px;
-
-  
-`;
-
-const BookmarkButton = styled.button`
-  font-size: 16px;
-  background-color: #c1a35f;
-  color: #333333;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 20px;
-  cursor: pointer;
-
-  &:hover 
-  {
-    background-color: #333333;
-    color: #c1a35f;
-  }
-`;
 
 function Recipe() 
 {

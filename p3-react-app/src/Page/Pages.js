@@ -7,40 +7,9 @@ import SearchResults from './SearchResults'
 import './Pages.css'
 import Bookmarks from './Bookmarks';
 import AboutUs from './AboutUs';
-import styled from 'styled-components';
-
-const Nav = styled.div`
-color:white;
-display:flex;
-// margin: 10px;
-background-color:#d54b1a;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+import { Nav, CustomText } from '../components/Style';
 
 
-ul
-{
-  margin: 10px;
-  align-items: center;
-  padding: 0;
-  list-style: none;
-  
-}
-
-a
-{
-  color: #f0ecc9;
-  text-decoration: none;
-  font-family:'JosefinSans-SemiBold';
-
-  font-weight:bold;
-
-}
-`
-
-const CustomText = styled.div`
-font-family:'JosefinSans-SemiBold';
-font-size:26px;
-`
 
 
 function Pages() {
