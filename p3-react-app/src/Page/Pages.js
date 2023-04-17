@@ -9,7 +9,7 @@ import Bookmarks from './Bookmarks';
 import AboutUs from './AboutUs';
 import { Nav} from '../components/Style';
 import styled from 'styled-components';
-import logoImage from '../components/myLogo.png'
+import logoImage from '../components/Logo.png'
 
 const LogoImage = styled.img`
   width: 2rem;
