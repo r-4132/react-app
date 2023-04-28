@@ -12,6 +12,7 @@ function Recipe()
   let params = useParams(); // will extract name from url
   const [ingredients, setIngredients] = useState({}); // 
   const [bookmarked, setBookmarked] = useState(false);
+  const [recipeName, setRecipeName] = useState(''); //Comment component will be able to have acces to recipe id or name with this state
 
   const fetchRecipes = async() => // I wanted to try different ways to fetch data from api.
   {
@@ -21,6 +22,7 @@ function Recipe()
     
     const ingredientsData = await data.json();
     setIngredients(ingredientsData);
+    setRecipeName(params.name);
     console.log(ingredientsData);
     
 
@@ -71,7 +73,7 @@ function Recipe()
       </IngredientsContainer>
       {bookmarked ? ( <BookmarkButton onClick={handleBookmark}>Remove</BookmarkButton> ) : ( <BookmarkButton onClick={handleBookmark}>Bookmark</BookmarkButton> )}
       <StarRating/>
-      <Comment/>
+      <Comment recipeName={recipeName} />
         </Card>
 
 
@@ -79,4 +81,4 @@ function Recipe()
   )
 }
 
-export default Recipe
+export default Recipe;
