@@ -11,6 +11,7 @@ function Recipe()
 {
   let params = useParams(); // will extract name from url
   const [ingredients, setIngredients] = useState({}); // 
+  const [bookmarked, setBookmarked] = useState(false);
 
   const fetchRecipes = async() => // I wanted to try different ways to fetch data from api.
   {
@@ -39,11 +40,13 @@ function Recipe()
     {
       const filteredRecipes = bookmarkedRecipes.filter(recipe => recipe.id !== ingredients.id); // filter out the and find the recipe that matches the current ingredients.id
       localStorage.setItem("bookmarkedRecipes", JSON.stringify(filteredRecipes)); // save it to filteredRecipes that is being converted to JSON STRING BY JSON.stringify in order to be stored as a text
+      setBookmarked(false);
     } 
     else 
     {
       bookmarkedRecipes.push(ingredients); // pushed to the bookmarkedRecipes array 
       localStorage.setItem("bookmarkedRecipes", JSON.stringify(bookmarkedRecipes)); //updated array is stored in the local storage, essential removing it from the local storage
+      setBookmarked(true);
     }
   }
   
@@ -66,7 +69,7 @@ function Recipe()
           ))
         }
       </IngredientsContainer>
-      <BookmarkButton onClick={handleBookmark}>Bookmark</BookmarkButton>
+      {bookmarked ? ( <BookmarkButton onClick={handleBookmark}>Remove</BookmarkButton> ) : ( <BookmarkButton onClick={handleBookmark}>Bookmark</BookmarkButton> )}
       <StarRating/>
       <Comment/>
         </Card>

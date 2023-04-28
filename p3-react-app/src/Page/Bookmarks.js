@@ -5,7 +5,6 @@ import './Pages.css'
 
 const Bookmarks = () => {
 
-
   const bookmarkedRecipes = JSON.parse(localStorage.getItem("bookmarkedRecipes")) || []; // // if nothing is stored in "bookmarkedRecipes", the fallback value || [] will assigns it to an empty array 
 
   return ( // this just basically display data stored in the local storage
