@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import StarRating from '../components/StarRating';
 import Comment from '../components/Comment'
-import './Pages.css'
+import '../assets/Pages.css'
 import { Container, BookmarkButton, Card, IngredientsContainer, Image} from '../components/Style' 
 
 
