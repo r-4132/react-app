@@ -72,7 +72,7 @@ function Recipe()
         }
       </IngredientsContainer>
       {bookmarked ? ( <BookmarkButton onClick={handleBookmark}>Remove</BookmarkButton> ) : ( <BookmarkButton onClick={handleBookmark}>Bookmark</BookmarkButton> )}
-      <StarRating/>
+      <StarRating recipeName={recipeName} />
       <Comment recipeName={recipeName} />
         </Card>
 

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const initialState = { rating: null }; //initialization. Set the value of rating to null
@@ -11,14 +11,32 @@ function reducer(state, action)
       return { //this is basically where the new rating value is being updated
         rating: action.payload //payload is used to pass the new rating value
     };
+
+    case 'UPDATE_RATING': // reducer updates the local storage
+      const ratings = JSON.parse(localStorage.getItem('ratings')) || {};
+      ratings[action.recipeName] = action.payload;
+      localStorage.setItem('ratings', JSON.stringify(ratings));
+      return {
+        rating: action.payload
+      };
     default:
       return state;
   }
 }
 
-function StarRating() 
+function StarRating({ recipeName }) 
 {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => 
+  {
+    const ratings = JSON.parse(localStorage.getItem('ratings')) || {};
+    const rating = ratings[recipeName]; // useEffect retrieves data by using recipeName as key
+    if (rating) 
+    {
+      dispatch({ type: 'SET_RATING', payload: rating }); // this triggers reducer to update 
+    }
+  }, [recipeName]);
 
   return (
     <div>
@@ -31,10 +49,9 @@ function StarRating()
             <input
               id="star_rad"
               type="radio"
-              name="rating"
+              name={`rating_${recipeName}`}
               value={ratingValue}
-              onClick={() =>
-                dispatch({ type: 'SET_RATING', payload: ratingValue })}
+              onChange={() => dispatch({ type: 'UPDATE_RATING', payload: ratingValue, recipeName })}
             />
             <FaStar
               id="star"
