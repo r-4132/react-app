@@ -1,25 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { SearchBox, Card } from "../assets/Style";
-import styled from "styled-components";
-// for style components, I'ts returning error when I try to move the styling to Style.js
-const ContainerTypes = styled.div`
-display: flex;  
-flex-direction:row;
-width: 80%;
-font-family: 'JosefinSans-SemiBold', Courier, monospace;
-justify-content: center;
+import { SearchBox, Card,ContainerTypes ,DishTypes ,DietTypes  } from "../assets/Style";
 
-`
-
-const DishTypes = styled.div`
-margin: 10px;
-`
-const DietTypes = styled.div`
-margin: 10px;
-
-`
 
 
 
@@ -39,11 +22,11 @@ const SearchRecipes = () =>
     try{
       const ingredientsArray = searchInput.split(' '); // will split up ingredients typed by the user into spaces
 
-      const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', 
+      const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', 
       {
           params: {
               apiKey: process.env.REACT_APP_API_KEY,
-              ingredients: ingredientsArray.join(','), // this will join the by comma which is required by the url
+              query: ingredientsArray.join(','), // this will join the by comma which is required by the url
               number: 8, // limit number of results to 10
               ranking: 1, // prioritize results with most missing ingredients
               dishTypes: dishTypes, //to select dish types
@@ -51,7 +34,7 @@ const SearchRecipes = () =>
             }
           });
           
-          navigate(`/search-results/${searchInput}`, { state: { results: response.data } }); //the first arguement will replace the url base on what the user input, the 2nd argument, state has the value of results w/c another object with a property w/c also has a value of response.data
+          navigate(`/search-results/${searchInput}`, { state: { results: response.data.results } }); //the first arguement will replace the url base on what the user input, the 2nd argument, state has the value of results w/c another object with a property w/c also has a value of response.data
     } 
 
     catch (error)
