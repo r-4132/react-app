@@ -165,3 +165,26 @@ export const SearchBox = styled.form`
 export const About = styled.div`
 line-height: 40px;
 `
+export const LogoImage = styled.img`
+  width: 2rem;
+  transform: scale(3);
+  margin: 20px 20px 0px;
+  // padding: 10px;
+`;
+
+export const ContainerTypes = styled.div`
+display: flex;  
+flex-direction:row;
+width: 80%;
+font-family: 'JosefinSans-SemiBold', Courier, monospace;
+justify-content: center;
+
+`
+
+export const DishTypes = styled.div`
+margin: 10px;
+`
+export const DietTypes = styled.div`
+margin: 10px;
+
+`

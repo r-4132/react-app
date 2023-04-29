@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Card, Image, About} from '../components/Style'
+import { Container, Card, About} from '../assets/Style'
 
 function AboutUs() {
   return (

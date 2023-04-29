@@ -7,16 +7,10 @@ import SearchResults from './SearchResults'
 import '../assets/Pages.css'
 import Bookmarks from './Bookmarks';
 import AboutUs from './AboutUs';
-import { Nav} from '../components/Style';
-import styled from 'styled-components';
+import { Nav, LogoImage } from '../assets/Style';
 import logoImage from '../assets/Logo.png'
 
-const LogoImage = styled.img`
-  width: 2rem;
-  transform: scale(3);
-  margin: 20px 20px 0px;
-  // padding: 10px;
-`;
+
 
 function Pages() {
   return (

@@ -13,7 +13,7 @@ function reducer(state, action)
     };
 
     case 'UPDATE_RATING': // reducer updates the local storage
-      const ratings = JSON.parse(localStorage.getItem('ratings')) || {};
+      const ratings = JSON.parse(localStorage.getItem('ratings')) || {}; // same as hand
       ratings[action.recipeName] = action.payload;
       localStorage.setItem('ratings', JSON.stringify(ratings));
       return {

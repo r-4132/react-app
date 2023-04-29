@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { SearchBox,Card } from "../components/Style";
+import { SearchBox, Card } from "../assets/Style";
 import styled from "styled-components";
-
+// for style components, I'ts returning error when I try to move the styling to Style.js
 const ContainerTypes = styled.div`
 display: flex;  
 flex-direction:row;
 width: 80%;
 font-family: 'JosefinSans-SemiBold', Courier, monospace;
 justify-content: center;
-
-
 
 `
 
