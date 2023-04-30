@@ -181,7 +181,7 @@ justify-content: center;
 
 `
 
-export const DishTypes = styled.div`
+export const cuisine = styled.div`
 margin: 10px;
 `
 export const DietTypes = styled.div`

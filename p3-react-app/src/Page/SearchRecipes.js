@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { SearchBox, Card,ContainerTypes ,DishTypes ,DietTypes  } from "../assets/Style";
+import { SearchBox, Card,ContainerTypes ,cuisine ,DietTypes  } from "../assets/Style";
 
 
 
@@ -9,8 +9,8 @@ import { SearchBox, Card,ContainerTypes ,DishTypes ,DietTypes  } from "../assets
 const SearchRecipes = () => 
 {
   const [searchInput, setSearchInput] = useState('');
-  const [dishTypes, setDishTypes] = useState([]);
-  const [dietTypes, setDietTypes] = useState([]);
+  const [cuisine, setCuisine] = useState([]);
+  const [diet, setDietTypes] = useState([]);
   
 
   const navigate = useNavigate(); // from react-router-dom library
@@ -21,6 +21,7 @@ const SearchRecipes = () =>
 
     try{
       const ingredientsArray = searchInput.split(' '); // will split up ingredients typed by the user into spaces
+      
 
       const response = await axios.get('https://api.spoonacular.com/recipes/complexSearch', 
       {
@@ -29,8 +30,8 @@ const SearchRecipes = () =>
               query: ingredientsArray.join(','), // this will join the by comma which is required by the url
               number: 8, // limit number of results to 10
               ranking: 1, // prioritize results with most missing ingredients
-              dishTypes: dishTypes, //to select dish types
-              dietTypes: dietTypes
+              cuisine: cuisine.join(','), //to select dish types
+              diet: diet.join(',') // .join convert array to string
             }
           });
           
@@ -43,20 +44,21 @@ const SearchRecipes = () =>
 
     }
 };
-const dishTypesList =  //array of dishes
+const cuisineList =  //array of dishes
 [
-  'Main course',
-  'Side dish',
-  'Dessert',
-  'Appetizer',
-  'Salad',
-  'Bread',
-  'Breakfast',
-  'Soup',
-  'Beverage',
-  'Fingerfood',
-  'Snack',
-  'Drink'
+  'American',
+  'Chinese',
+  'European',
+  'French',
+  'German',
+  'Greek',
+  'Indian',
+  'Italian',
+  'Japanese',
+  'Mediterranean',
+  'Nordic',
+  'Thai',
+  'Vietnamese'
 ];
 
 const dietTypesList =
@@ -75,37 +77,24 @@ const dietTypesList =
   
 ]
 
-const handleDishTypes = (event) => 
+const handleCheckboxChange = (set) => (event) => //to my understanding this is a higher-order function t omake the funtion dynamic. it takes in a set function as an argument and returns a new function that takes in an event objec
 {
   const isChecked = event.target.checked;
-  const dishType = event.target.value;
+  const value = event.target.value;
 
   if (isChecked) 
   {
-    setDishTypes([...dishTypes, dishType]); //  creates a new array that includes the current dishType value
+    set((state) => [...state, value]);
   } 
-
+  
   else 
   {
-    setDishTypes(dishTypes.filter((type) => type !== dishType)); //function creates a new array that filters out the current dishType value from the dishTypes array using the filter() method
-  }
-};
-const handleDietTypes = (event) => 
-{
-  const isChecked = event.target.checked;
-  const dietType = event.target.value;
-
-  if (isChecked) 
-  {
-    setDietTypes([...dietTypes, dietType]); //  creates a new array that includes the current dishType value
-  } 
-
-  else 
-  {
-    setDietTypes(dietTypes.filter((type) => type !== dietType)); //function creates a new array that filters out the current dishType value from the dishTypes array using the filter() method
+    set((state) => state.filter((type) => type !== value));
   }
 };
 
+const handleCuisine = handleCheckboxChange(setCuisine);
+const handleDietTypes = handleCheckboxChange(setDietTypes);
 
 return (
   <>
@@ -120,23 +109,25 @@ return (
           </SearchBox>
         <ContainerTypes>
           <Card>
-            <DishTypes>
-          <p>Filter by dish type:</p>
-          {dishTypesList.map((type, index) => ( // looping over dishtypes
+            <cuisine>
+          <p>Filter by Cuisine:</p>
+          {cuisineList.map((type, index) => ( // looping over dishtypes
             <label key={index}>
-              <input type="checkbox" value={type} onChange={handleDishTypes} />
-              {type}
-            </label>
+            <input type="checkbox" value={type} onChange={handleCuisine} />
+            {type}
+          </label>
+          
           ))}
-            </DishTypes>
+            </cuisine>
 
             <DietTypes>
-          <p>Filter by diet type:</p>
+          <p>Filter by Diet:</p>
           {dietTypesList.map((type, index) => ( // looping over dishtypes
             <label key={index}>
-              <input type="checkbox" value={type} onChange={handleDietTypes} />
-              {type}
-            </label>
+            <input type="checkbox" value={type} onChange={handleDietTypes} />
+            {type}
+          </label>
+          
           ))}
             </DietTypes>
           </Card>
