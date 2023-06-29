@@ -20,7 +20,7 @@ This is required to be able to use this app.
 - git
 - react
 
-**Installation**
+### **Installation**
 - `git init` to initialize folder
 - `git clone` https://github.com/r-4132/node-app.git
 - Install NPM packages by `npm install` in both the backend and frontend folder
