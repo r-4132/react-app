@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# A Recipe website
+&nbsp;
+## Features
+- User will be able to search for recipes based on Ingredients that will help them save time from scowering the internet and checking recipes one by one.
+- User will be able to filter recipes based on diet, cuisine and dish type.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+&nbsp;
+## Technology
 
-## Available Scripts
+- <img src = "https://repository-images.githubusercontent.com/37153337/9d0a6780-394a-11eb-9fd1-6296a684b124" width="200">
+- <img src = "https://p92.com/binaries/content/gallery/p92website/technologies/htmlcssjs-details.png" width="200">
 
-In the project directory, you can run:
 
-### `npm start`
+---
+&nbsp;
+## Getting Started
+**Prerequisites**
+This is required to be able to use this app.
+- git
+- react
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Installation**
+- `git init` to initialize folder
+- `git clone` https://github.com/r-4132/node-app.git
+- Install NPM packages by `npm install` in both the backend and frontend folder
+- Create an account in Spoonacular API `https://spoonacular.com/food-api ` to get the API key
+- In backend folder, create a .env file for the API key `REACT_APP_API_KEY=<apiKey>`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+&nbsp;
+## How to use
+- search ingredients such as rice, flour and etc... 
 
-### `npm test`
+&nbsp;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Choose only one for each option for the filters (diet, meals, dish) .
