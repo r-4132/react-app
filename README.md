@@ -29,8 +29,5 @@ This is required to be able to use this app.
 
 &nbsp;
 ## How to use
-- search ingredients such as rice, flour and etc... 
-
-&nbsp;
-
+- Search ingredients such as rice, flour and etc... 
 - Choose only one for each option for the filters (diet, meals, dish) .
